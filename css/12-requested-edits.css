@@ -1,0 +1,56 @@
+/* REQUESTED MINIMAL CHANGES ONLY. No colors, spacing system, layout or page redesign. */
+/* Clothes slots show images/drawings only, with NO numbers or text. */
+.category-img::after { display: none !important; content: none !important; }
+.category-caption { display: none !important; }
+.lookbook-card figcaption { display: none !important; }
+/* Remove background Q monograms, which resemble a logo, without touching backgrounds. */
+.about-visual:not(.has-photo)::after { display: none !important; content: none !important; }
+.contact-section::before { display: none !important; content: none !important; }
+.product-grid { display: flex; gap: 16px; overflow-x: auto; padding: 0 0 12px; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: #879487 #e8e9e3; }
+.product-grid::-webkit-scrollbar { height: 5px; }
+.product-grid::-webkit-scrollbar-track { background: #e8e9e3; }
+.product-grid::-webkit-scrollbar-thumb { background: #879487; border-radius: 5px; }
+.product-grid:focus-visible { outline: 2px solid var(--olive); outline-offset: 4px; }
+.product-slot { flex: 0 0 28%; aspect-ratio: 4 / 5; min-width: 0; overflow: hidden; background: #e2e4db; border-radius: 6px; scroll-snap-align: start; }
+@media (max-width: 790px) { .product-grid { gap: 12px; } .product-slot { flex-basis: 42%; } }
+@media (max-width: 550px) { .product-grid { gap: 10px; } .product-slot { flex-basis: 82%; } }
+
+/* Refine the factory line art and improve hero typography on small screens. */
+.factory-illustration { opacity: .9; }
+.factory-illustration > g:first-of-type > path:first-child { stroke-width: 3; stroke-opacity: .72; }
+.factory-illustration > g:first-of-type > path:nth-child(2) { stroke-width: 2.4; stroke-opacity: .68; }
+.factory-illustration > g:first-of-type > path:nth-child(3) { stroke-width: 3; stroke-opacity: .72; }
+.factory-illustration > g:first-of-type > path:nth-child(4),
+.factory-illustration > g:first-of-type > path:nth-child(5) { stroke-width: 2.5; stroke-opacity: .72; }
+.factory-illustration > circle { stroke-width: 1.5; }
+@media (max-width: 550px) {
+  .hero-left h1 { font-size: clamp(42px, 11vw, 48px); line-height: 1.08; letter-spacing: -.05em; }
+  .hero-description { max-width: 36ch; line-height: 1.85; }
+  .hero-visual .image-stamp,
+  .hero-visual .hero-image-credit { letter-spacing: .12em; }
+}
+
+.contact-item > div:last-child { min-width: 0; flex: 1; }
+.contact-item span { display: block; max-width: 100%; overflow-wrap: anywhere; }
+@media (max-width: 550px) {
+  .contact-item span { font-size: clamp(12px, 3.6vw, 14px); line-height: 1.7; }
+}
+
+@keyframes gentle-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes gentle-drift {
+  from { transform: translateY(-3px); }
+  to { transform: translateY(3px); }
+}
+.hero-left { animation: gentle-rise .7s ease-out both; }
+.hero-visual { animation: gentle-rise .8s ease-out .12s both; }
+.factory-illustration { animation: gentle-drift 7s ease-in-out infinite alternate; }
+.product-slot { transition: transform .3s ease, filter .3s ease; }
+.product-slot:hover { transform: translateY(-3px); filter: brightness(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  .hero-left, .hero-visual, .factory-illustration { animation: none; }
+  .product-grid { scroll-behavior: auto; scroll-snap-type: x proximity; }
+  .product-slot { transition: none; }
+}

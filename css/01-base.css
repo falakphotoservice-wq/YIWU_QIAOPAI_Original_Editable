@@ -1,0 +1,3 @@
+/* Original general design tokens, font styles and container. Extracted unchanged from the provided index.html. */
+    :root{--ink:#20302d;--olive:#536555;--sand:#f7f5ef;--cream:#efece3;--white:#fff;--muted:#727b74;--line:#dedfd8;--orange:#c8794f;--radius:8px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--sand);color:var(--ink);font-family:'DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased}body:lang(ar){font-family:'Noto Sans Arabic',Arial,sans-serif}a{text-decoration:none;color:inherit}button{font:inherit}img{max-width:100%;display:block}section{scroll-margin-top:90px}.container{width:min(1180px,calc(100% - 72px));margin-inline:auto}

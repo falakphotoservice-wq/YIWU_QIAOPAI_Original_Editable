@@ -1,0 +1,2 @@
+/* Original photo appearance rules. Extracted unchanged from the provided index.html. */
+    .has-photo{background-size:cover!important;background-position:center!important}.has-photo:before,.has-photo .art-hide-on-photo,.has-photo .circle,.has-photo .texture{display:none!important}.category-img.has-photo:after{z-index:2;color:#fff;text-shadow:0 1px 10px #0006}.hero-visual.has-photo:after{display:block!important}.about-visual.has-photo:after{display:none}

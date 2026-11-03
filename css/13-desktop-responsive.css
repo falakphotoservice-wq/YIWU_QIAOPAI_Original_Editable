@@ -1,0 +1,26 @@
+/* Adapt the desktop hero to common laptop and wide-monitor viewports. */
+@media (min-width: 1081px) {
+  .hero {
+    min-height: clamp(560px, calc(100vh - 118px), 760px);
+  }
+
+  .hero-left {
+    padding-top: clamp(64px, 7vw, 100px);
+    padding-right: clamp(36px, 5vw, 88px);
+    padding-bottom: clamp(64px, 6vw, 85px);
+    padding-left: clamp(36px, calc((100vw - 1180px) / 2), 690px);
+  }
+
+  .hero-visual {
+    min-height: clamp(560px, calc(100vh - 118px), 760px);
+  }
+}
+
+@supports (height: 100svh) {
+  @media (min-width: 1081px) {
+    .hero,
+    .hero-visual {
+      min-height: clamp(560px, calc(100svh - 118px), 760px);
+    }
+  }
+}

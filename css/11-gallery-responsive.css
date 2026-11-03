@@ -1,0 +1,4 @@
+/* Original responsive gallery rules. Extracted unchanged from the provided index.html. */
+    @media(max-width:790px){.lookbook-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.lookbook-section{padding-top:70px;padding-bottom:75px}}
+    @media(max-width:550px){.lookbook-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.lookbook-section{padding-top:64px;padding-bottom:70px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
